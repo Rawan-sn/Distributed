@@ -10,4 +10,5 @@ public class Server{
         UnicastRemoteObject.exportObject(c);
         Naming.bind("chatting", c);
     }
+
 }

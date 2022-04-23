@@ -13,6 +13,5 @@ public class Client {
         User u = new UserImpl();
         UnicastRemoteObject.exportObject(u);
         c.register(u);
-        c.sendMsg("hello everyone ……");
     }
 }
