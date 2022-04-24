@@ -5,21 +5,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CoordinatorImpl implements Coordinator{
-    List<User> users = new ArrayList<User>();
+    List<User> users = new ArrayList<>();
+    @Override
     public void register (User u) throws RemoteException
     {
         users.add(u);
     }
 
     @Override
-    public User search(String fileName) throws RemoteException {
+    public List<User> search(String fileName) throws RemoteException {
+        List<User> list = new ArrayList<>();
         for(int i=0 ;i<users.size();i++){
             boolean c = users.get(i).search(fileName);
-            if(c==true){
-           return users.get(i);}
+            if(c){
+                list.add(users.get(i));
+
+            }
 
         }
-        return null;
+        return list;
     }
 
 
