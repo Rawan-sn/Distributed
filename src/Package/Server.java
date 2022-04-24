@@ -14,8 +14,8 @@ public class Server extends CoordinatorImpl{
         try {
             CoordinatorImpl obj = new CoordinatorImpl();
             Coordinator stub = (Coordinator) UnicastRemoteObject.exportObject(obj, 0);
-            LocateRegistry.createRegistry(1999);
-            Registry registry = LocateRegistry.getRegistry("localhost",1999);
+            LocateRegistry.createRegistry(2000);
+            Registry registry = LocateRegistry.getRegistry("localhost",2000);
             registry.bind("Reverser", stub);
             System.err.println("Server ready");
         }

@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.*;
 
@@ -89,27 +90,26 @@ public class UserImpl implements User {
 
     @Override
     public void recive(byte[] byteArray, String nameUser, String file_name) {
-        FileOutputStream saveFile = null;
-        try {
-            File file = new File("C:\\Users\\asus\\IdeaProjects\\P2PJavaRMICIS-master\\DistributedProject\\" + nameUser +"\\"+ file_name);
-            saveFile = new FileOutputStream("C:\\Users\\asus\\IdeaProjects\\P2PJavaRMICIS-master\\DistributedProject\\" + nameUser +"\\"+ file_name);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        DataOutputStream save = new DataOutputStream(saveFile);
 
         try {
-            for (int i = 0; i < byteArray.length; i++)
-                save.writeByte(byteArray[i]);
+            FileWriter myWriter = new FileWriter("C:\\Users\\ranee\\OneDrive\\Documents\\NetBeansProjects\\JavaApplication1\\" + user + "\\" + namefile + "txt");
+            try {
+                for (int j = 0; j < byteArray.length; j++) {
+                    myWriter.write((char) byteArray[j]);
+                }
+                fileOFUser.add(namefile)
+            } catch (IOException ex) {
+                Logger.getLogger(UserImpl.class.getName()).log(Level.SEVERE, ms);
+            }
+            myWriter.close();
+            System.out.println("This file is received");
+
         } catch (IOException e) {
+            System.out.println("Error");
             e.printStackTrace();
         }
 
-        try {
-            save.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 
 

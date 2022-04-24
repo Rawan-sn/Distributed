@@ -12,14 +12,14 @@ public class Client2 {
 
     public static void main(String args[]) {
         try {
-            String url = "rmi://localhost:1999/Reverser";
+            String url = "rmi://localhost:2000/Reverser";
             Scanner sc = new Scanner(System.in);
-            LocateRegistry.createRegistry(1910);
-            Registry registry = LocateRegistry.getRegistry("localhost", 1910);
+            LocateRegistry.createRegistry(1908);
+            Registry registry = LocateRegistry.getRegistry("localhost", 1908);
             Coordinator strf = (Coordinator) Naming.lookup(url);
             User user = new UserImpl();
             user.setNameUser("user2");
-            File directory = new File("C:\\Users\\ranee\\IdeaProjects\\NewDistributed\\" + user.getNameUser());
+            File directory = new File("C:\\Users\\asus\\IdeaProjects\\P2PJavaRMICIS-master\\DistributedProject\\" + user.getNameUser());
              File[] filename = directory.listFiles();
             for (File f : filename) {
                 user.addFiles(f.getName().replace(".txt", ""));
