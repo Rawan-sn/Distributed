@@ -19,9 +19,7 @@ public class CoordinatorImpl implements Coordinator{
             boolean c = users.get(i).search(fileName);
             if(c){
                 list.add(users.get(i));
-
             }
-
         }
         return list;
     }

@@ -12,5 +12,5 @@ public interface User extends Remote {
     public void addFiles(String fileName) throws  RemoteException;;
     public void setNameUser(String Name) throws  RemoteException;;
     public String getNameUser() throws  RemoteException;;
-    public void recive(byte[] byteArray, String nameUser, String file_name) throws  RemoteException;;
+    public void receive(byte[] byteArray, String nameUser, String file_name) throws  RemoteException;;
 }
