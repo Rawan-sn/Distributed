@@ -18,7 +18,7 @@ public class Client1 {
             Registry registry = LocateRegistry.getRegistry("localhost", 1905);
             Coordinator strf = (Coordinator) Naming.lookup(url);
             User user = new UserImpl();
-            user.setNameUser("userOne");
+            user.setNameUser("user1");
             File directory = new File("C:\\Users\\asus\\IdeaProjects\\P2PJavaRMICIS-master\\DistributedProject\\" + user.getNameUser());
              File[] filename = directory.listFiles();
             for (File f : filename) {

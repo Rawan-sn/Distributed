@@ -89,7 +89,27 @@ public class UserImpl implements User {
 
     @Override
     public void recive(byte[] byteArray, String nameUser, String file_name) {
+        FileOutputStream saveFile = null;
+        try {
+            File file = new File("C:\\Users\\asus\\IdeaProjects\\P2PJavaRMICIS-master\\DistributedProject\\" + nameUser +"\\"+ file_name);
+            saveFile = new FileOutputStream("C:\\Users\\asus\\IdeaProjects\\P2PJavaRMICIS-master\\DistributedProject\\" + nameUser +"\\"+ file_name);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        DataOutputStream save = new DataOutputStream(saveFile);
 
+        try {
+            for (int i = 0; i < byteArray.length; i++)
+                save.writeByte(byteArray[i]);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            save.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
