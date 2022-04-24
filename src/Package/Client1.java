@@ -12,10 +12,10 @@ public class Client1 {
 
     public static void main(String args[]) {
         try {
-            String url = "rmi://localhost:1900/Reverser";
+            String url = "rmi://localhost:1999/Reverser";
             Scanner sc = new Scanner(System.in);
-            LocateRegistry.createRegistry(1905);
-            Registry registry = LocateRegistry.getRegistry("localhost", 1905);
+            LocateRegistry.createRegistry(1906);
+            Registry registry = LocateRegistry.getRegistry("localhost", 1906);
             Coordinator strf = (Coordinator) Naming.lookup(url);
             User user = new UserImpl();
             user.setNameUser("user1");
@@ -25,10 +25,12 @@ public class Client1 {
                 user.addFiles(f.getName().replace(".txt", ""));
                 System.out.println(f.getName().replace(".txt", ""));
             }
+            System.out.println("Client0000000000000000000000000000000");
+
             User stub = (User) UnicastRemoteObject.exportObject(user, 0);
             registry.bind("Reverser_1", stub);
             strf.register(stub);
-             System.out.println("Clien "+user.getNameUser()+ " ready");
+             System.out.println("Client "+user.getNameUser()+ " ready");
             while (true) {
                 System.out.println("What file do you want to download please enter name file :");
                 String search = sc.next();
