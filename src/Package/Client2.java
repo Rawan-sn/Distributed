@@ -1,14 +1,14 @@
 package Package;
 
+import java.io.File;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 import java.util.Scanner;
-import java.io.*;
 
-public class Client1 {
+public class Client2 {
 
     public static void main(String args[]) {
         try {
@@ -18,7 +18,7 @@ public class Client1 {
             Registry registry = LocateRegistry.getRegistry("localhost", 1906);
             Coordinator strf = (Coordinator) Naming.lookup(url);
             User user = new UserImpl();
-            user.setNameUser("user1");
+            user.setNameUser("user2");
             File directory = new File("C:\\Users\\ranee\\IdeaProjects\\NewDistributed\\" + user.getNameUser());
              File[] filename = directory.listFiles();
             for (File f : filename) {
@@ -28,7 +28,7 @@ public class Client1 {
             System.out.println("Client0000000000000000000000000000000");
 
             User stub = (User) UnicastRemoteObject.exportObject(user, 0);
-            registry.bind("Reverser_1", stub);
+            registry.bind("Reverser_2", stub);
             strf.register(stub);
              System.out.println("Client "+user.getNameUser()+ " ready");
             while (true) {
