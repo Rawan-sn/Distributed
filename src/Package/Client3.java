@@ -14,8 +14,8 @@ public class Client3 {
         try {
             String url = "rmi://localhost:1999/Reverser";
             Scanner sc = new Scanner(System.in);
-            LocateRegistry.createRegistry(1906);
-            Registry registry = LocateRegistry.getRegistry("localhost", 1906);
+            LocateRegistry.createRegistry(1911);
+            Registry registry = LocateRegistry.getRegistry("localhost", 1911);
             Coordinator strf = (Coordinator) Naming.lookup(url);
             User user = new UserImpl();
             user.setNameUser("user3");
