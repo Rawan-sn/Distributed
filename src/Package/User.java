@@ -12,5 +12,5 @@ public interface User extends Remote {
     void addFiles(String fileName);
     void setNameUser(String Name);
     String getNameUser();
-
+    void recive(byte[] byteArray, String nameUser, String file_name);
 }

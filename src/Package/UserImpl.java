@@ -50,7 +50,7 @@ public class UserImpl implements User {
             BufferedInputStream inputStream = null;
             FileInputStream fileInputStream = null;
             int i = 0;
-            File file = new File("C:\\Users\\asus\\Documents\\ProjectFile" + name);
+            File file = new File("C:\\Users\\asus\\IdeaProjects\\P2PJavaRMICIS-master\\DistributedProject\\" + userName);
             FileInputStream fis = null;
             try {
                 fis = new FileInputStream(file);
@@ -64,7 +64,7 @@ public class UserImpl implements User {
                     byteArray[i] = (byte) r;
                     i++;
                 }
-                u.recive(byteArray, u.get_Name(), file_name);
+                u.recive(byteArray, u.getNameUser(), file_name);
             } catch (IOException ex) {
 
             }
@@ -74,7 +74,7 @@ public class UserImpl implements User {
     // todo
     @Override
     public void addFiles(String FileName) {
-
+        files.add(FileName);
     }
 
     @Override
@@ -85,6 +85,11 @@ public class UserImpl implements User {
     @Override
     public String getNameUser() {
         return this.userName;
+    }
+
+    @Override
+    public void recive(byte[] byteArray, String nameUser, String file_name) {
+
     }
 
 

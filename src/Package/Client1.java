@@ -19,7 +19,7 @@ public class Client1 {
             Coordinator strf = (Coordinator) Naming.lookup(url);
             User user = new UserImpl();
             user.setNameUser("userOne");
-            File directory = new File("C:\\Users\\Mostafa\\Desktop\\Nour\\project\\my-app\\" + user.getNameUser());
+            File directory = new File("C:\\Users\\asus\\IdeaProjects\\P2PJavaRMICIS-master\\DistributedProject\\" + user.getNameUser());
              File[] filename = directory.listFiles();
             for (File f : filename) {
                 user.addFiles(f.getName().replace(".txt", ""));
