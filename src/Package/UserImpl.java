@@ -64,11 +64,27 @@ public class UserImpl implements User {
                     byteArray[i] = (byte) r;
                     i++;
                 }
-                u.recive(byteArray, u.get_Name(), name_file);
+                u.recive(byteArray, u.get_Name(), file_name);
             } catch (IOException ex) {
 
             }
         }
+    }
+
+    // todo
+    @Override
+    public void addFiles(String FileName) {
+
+    }
+
+    @Override
+    public void setNameUser(String Name) {
+        this.userName = Name;
+    }
+
+    @Override
+    public String getNameUser() {
+        return this.userName;
     }
 
 
