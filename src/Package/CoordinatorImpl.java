@@ -26,5 +26,11 @@ public class CoordinatorImpl implements Coordinator{
         return list;
     }
 
+    // todo
+    @Override
+    public void download(String file_name, User u) throws RemoteException {
+
+    }
+
 
 }

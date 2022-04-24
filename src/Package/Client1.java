@@ -10,10 +10,10 @@ public class Client1 {
 
     public static void main(String args[]) {
         try {
-            String url = "rmi://localhost:1901/Reverser";
+            String url = "rmi://localhost:1900/Reverser";
             Scanner sc = new Scanner(System.in);
-            LocateRegistry.createRegistry(1904);
-            Registry registry = LocateRegistry.getRegistry("localhost", 1904);
+            LocateRegistry.createRegistry(1905);
+            Registry registry = LocateRegistry.getRegistry("localhost", 1905);
             Coordinator strf = (Coordinator) Naming.lookup(url);
             User user = new UserImpl();
             //user.setNameUser("userOne");
