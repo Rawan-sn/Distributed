@@ -9,6 +9,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+import java.io.*;
 
 public class UserImpl implements User {
     String userName;
@@ -45,7 +46,7 @@ public class UserImpl implements User {
     // todo
     @Override
     public void download(String file_name, User u) throws RemoteException {
-        if (list_name.contains(file_name)) {
+        if (files.contains(file_name)) {
             BufferedInputStream inputStream = null;
             FileInputStream fileInputStream = null;
             int i = 0;

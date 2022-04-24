@@ -6,6 +6,7 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 import java.util.Scanner;
+import java.io.*;
 
 public class Client1 {
 
@@ -39,7 +40,7 @@ public class Client1 {
                     }
                     System.out.println("");
                     for (int i = 0; i < list_user.size(); i++) {
-                        list_user.get(i).dawonloadFile(search, user);
+                        list_user.get(i).download(search, user);
                     }
                 } else {
                     System.out.println("the file is not found ");
