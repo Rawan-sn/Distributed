@@ -54,9 +54,11 @@ public class UserImpl implements User {
             BufferedInputStream inputStream = null;
             FileInputStream fileInputStream = null;
             int i = 0;
-            File file = new File("C:\\Users\\ranee\\IdeaProjects\\NewDistributed\\" + userName);
+            File file = new File("C:\\Users\\ranee\\IdeaProjects\\NewDistributed\\" + userName +"\\" + file_name + ".txt");
             FileInputStream fis = null;
             try {
+                System.out.println(file+"fileeeeeeeee");
+
                 System.out.println("fjjjjjjjjjj");
                 fis = new FileInputStream(file);
             } catch (FileNotFoundException e) {
