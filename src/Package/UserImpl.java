@@ -100,7 +100,8 @@ public class UserImpl implements User {
     public void receive(byte[] byteArray, String nameUser, String file_name) {
         System.out.println("receiveeeeeeeeeeeeee");
         try {
-            FileWriter myWriter = new FileWriter("C:\\Users\\ranee\\IdeaProjects\\NewDistributed\\" + nameUser + "\\" + file_name + "txt");
+            FileWriter myWriter = new FileWriter("C:\\Users\\ranee\\IdeaProjects\\NewDistributed\\"
+                    + nameUser + "\\" + file_name + ".txt");
             try {
                 for (int j = 0; j < byteArray.length; j++) {
                     myWriter.write((char) byteArray[j]);
